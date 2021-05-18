@@ -1,0 +1,47 @@
+public class ex2 {
+    public static class BankAccount{
+        protected String number;
+        protected Long balance;
+        BankAccount(String number, Long balance){
+            this.number = number;
+            this.balance = balance;
+        }
+        void print(){
+            System.out.println("Dati nr contului: " +number);
+            System.out.println("Introduceti balantul: " +balance);
+        }
+    }
+    public static class CheckingAccount extends BankAccount{
+        double fee;
+        CheckingAccount(String number, Long balance, double fee){
+            super(number, balance);
+            this.fee = (double)fee;
+        }
+        void print(){
+            super.print();
+            System.out.println("Taxa: " +fee);
+        }
+    }
+    public static class SavingAccount extends BankAccount{
+    double interestRate;
+        SavingAccount(String number, Long balance, double interestRate) {
+            super(number, balance);
+            this.interestRate = (double)interestRate;
+        }
+
+        @Override
+        void print() {
+            super.print();
+            System.out.println("Rata de interes: " +interestRate);
+        }
+    }
+
+   public static void main(String args[]){
+        BankAccount A = new BankAccount("1A", 18707L);
+        A.print();
+        CheckingAccount B = new CheckingAccount("2B", 18364L,11.4);
+        B.print();
+        SavingAccount C = new SavingAccount("3C", 19374L, 18.8);
+        C.print();
+   }
+}
