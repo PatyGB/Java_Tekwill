@@ -12,7 +12,7 @@ public class Main {
 
         System.out.println();
 
-        System.out.println(analyst.getName() + "\n"+analyst.getEmail() + "\n" + analyst.getExperience() + "\n" +
+        System.out.println(analyst.getName() + "\n" + analyst.getEmail() + "\n" + analyst.getExperience() + "\n" +
                 analyst.isPhd() + "\n" + Arrays.toString(analyst.getMethods()));
     }
 }
