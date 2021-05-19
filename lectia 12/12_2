@@ -1,0 +1,79 @@
+public class Publicatii {
+    public static class Publication {
+        private String title;
+        public Publication(String title) {
+            this.title = title;
+        }
+        public final String getInfo() {
+        return getType() + getDetails() + title;
+        }
+        public String getType() {
+            return "Publication: ";
+        }
+
+        public String getDetails() {
+            return "";
+        }
+    }
+    public static class Newspaper extends Publication {
+        private String source;
+        public Newspaper(String title, String source) {
+            super(title);
+            this.source = source;
+        }
+        public String getType(){
+            return "Newspaper";
+        }
+
+        public String getDetails(){
+            return "(source - " + source + "):";
+        }
+    }
+    public static class Article extends Publication {
+        private String author;
+        public Article(String title, String author) {
+            super(title);
+            this.author = author;
+        }
+
+        @Override
+        public String getType() {
+            return "Article";
+        }
+
+        @Override
+        public String getDetails() {
+            return "(author - " + author +"):";
+        }
+    }
+    public static class Announcement extends Publication {
+        private int daysToExpire;
+        public Announcement(String title, int daysToExpire) {
+            super(title);
+            this.daysToExpire = daysToExpire;
+        }
+
+        @Override
+        public String getType() {
+            return "Announcement";
+        }
+
+        @Override
+        public String getDetails() {
+            return  "(days to expire - " + daysToExpire + "):";
+
+        }
+    }
+
+        public static void main(String[] args) {
+            Publication A = new Publication(" The new era ");
+            System.out.println(A.getInfo());
+            Newspaper B = new Newspaper(" Football results ", "Sport news");
+            System.out.println(B.getInfo());
+            Article C = new Article(" Why the Sun is hot", "DR James Smith" );
+            System.out.println(C.getInfo());
+            Announcement D = new Announcement(" Will sell a house ", 30);
+            System.out.println(D.getInfo());
+
+        }
+    }
