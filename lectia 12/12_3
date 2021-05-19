@@ -1,0 +1,30 @@
+public class Masini {
+    static class Vehicle {
+        protected String licensePlate;
+        public Vehicle(String licensePlate) {
+            this.licensePlate = licensePlate;
+        }
+        public String toString(){
+            return "Vehicle{licensePlate = " + licensePlate + " }";
+        }
+    }
+    static class Car extends Vehicle {
+        protected int numberOfSeats;
+        public Car(String licensePlate, int numberOfSeats) {
+            super(licensePlate);
+            this.numberOfSeats = numberOfSeats;
+        }
+
+        @Override
+        public String toString() {
+            return "Car{" + "licensePlate=" + licensePlate + ", " + "numberOfSeats = " + numberOfSeats + "}";
+        }
+    }
+    public static void main(String[] args) {
+        Vehicle A = new Vehicle("ABC123");
+        Car B = new Car("ABC123", 4);
+
+        System.out.println(A.toString());
+        System.out.println(B.toString());
+    }
+}
