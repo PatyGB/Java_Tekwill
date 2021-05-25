@@ -1,0 +1,121 @@
+abstract class Shape {
+    abstract double getPerimeter();
+    abstract double getArea();
+}
+
+ class Triangle extends Shape{
+    private int x;
+    private int y;
+    private int z;
+
+    public Triangle(int x, int y, int z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
+
+    public int get_x() {
+        return x;
+    }
+
+    public void set_x(int x) {
+        this.x = x;
+    }
+
+    public int get_y() {
+        return y;
+    }
+
+    public void set_y(int y) {
+        this.y = y;
+    }
+
+    public int get_z() {
+        return z;
+    }
+
+    public void set_z(int z) {
+        this.z = z;
+    }
+    public double getPerimeter(){
+        return x + y + z;
+    }
+    public double getArea(){
+        double p = getPerimeter()/2;
+        return Math.sqrt(p*(p-x)*(p-y)*(p-z));
+    }
+}
+
+class Rectangle extends Shape{
+    private int a;
+    private int b;
+
+    public Rectangle(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+
+    public int get_a() {
+        return a;
+    }
+
+    public void set_a(int a) {
+        this.a = a;
+    }
+
+    public int get_b() {
+        return b;
+    }
+
+    public void set_b(int b) {
+        this.b = b;
+    }
+    public double getPerimeter(){
+        return 2*(a+b);
+    }
+    public double getArea(){
+        return a*b;
+    }
+}
+
+class Circle extends Shape{
+    private int raza;
+
+    public Circle(int raza) {
+        this.raza = raza;
+    }
+
+    public int get_r() {
+        return raza;
+    }
+
+    public void set_r(int raza) {
+        this.raza = raza;
+    }
+
+    public double getPerimeter(){
+        return 2*Math.PI*raza;
+    }
+
+    public double getArea(){
+        return Math.PI*Math.pow(raza,2);
+    }
+
+
+}
+
+class Main2 {
+    public static void main(String[] args) {
+
+        Triangle A = new Triangle(3,4,5);
+        Rectangle B = new Rectangle(5,10);
+        Circle C = new Circle(10);
+        
+        System.out.println(A.getPerimeter());
+        System.out.println(A.getArea());
+        System.out.println(B.getPerimeter());
+        System.out.println(B.getArea());
+        System.out.println(C.getPerimeter());
+        System.out.println(C.getArea());
+    }
+}
