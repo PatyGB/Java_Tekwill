@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    int i = scanner.nextInt();
+
+    int i1 = i / 100; // 476 / 100 = 4
+    int i2 = (i % 100) / 10; // 74 / 10 = 7
+    int i3 = i % 10; // 476 / 10 = 6
+    int res = i1 + i2 + i3;
+    System.out.println(res);
+  }
+}
